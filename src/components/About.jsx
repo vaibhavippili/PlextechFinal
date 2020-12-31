@@ -15,7 +15,7 @@ function About() {
           <div class="col-lg-5">
             <h1 class="font-weight-light">About</h1>
             <p>
-              THIS IS OUR PLEX PROJECT!!
+              PROJJEJEJCT!!!
             </p>
           </div>
         </div>
