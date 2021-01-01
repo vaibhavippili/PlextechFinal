@@ -59,6 +59,24 @@ function Navigation(props) {
                   Covid
                 </Link>
               </li>
+              <li
+                class={`nav-item  ${
+                  props.location.pathname === "/weather" ? "active" : ""
+                }`}
+              >
+                <Link class="nav-link" to="/weather">
+                  Weather
+                </Link>
+              </li>
+              <li
+                class={`nav-item  ${
+                  props.location.pathname === "/stocks" ? "active" : ""
+                }`}
+              >
+                <Link class="nav-link" to="/stocks">
+                  Stocks
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

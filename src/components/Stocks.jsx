@@ -1,8 +1,8 @@
 import React from "react";
 
-function Covid() {
+function Stocks() {
   return (
-    <div className="covid">
+    <div className="stocks">
       <div class="container">
         <div class="row align-items-center my-5">
           <div class="col-lg-7">
@@ -13,9 +13,9 @@ function Covid() {
             />
           </div>
           <div class="col-lg-5">
-            <h1 class="font-weight-light">Corona Virus Statistics</h1>
+            <h1 class="font-weight-light">Top Stock Performers</h1>
             <p>
-              This will output covid stats.
+              These are the top stock performers!
             </p>
           </div>
         </div>
@@ -24,4 +24,4 @@ function Covid() {
   );
 }
 
-export default Covid;
+export default Stocks;
