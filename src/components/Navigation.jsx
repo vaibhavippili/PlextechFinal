@@ -7,7 +7,7 @@ function Navigation(props) {
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
           <Link class="navbar-brand" to="/">
-            React Multi-Page Website
+            Your Personal Dashboard!
           </Link>
           <button
             class="navbar-toggler"
@@ -48,6 +48,15 @@ function Navigation(props) {
               >
                 <Link class="nav-link" to="/contact">
                   Contact
+                </Link>
+              </li>
+              <li
+                class={`nav-item  ${
+                  props.location.pathname === "/covid" ? "active" : ""
+                }`}
+              >
+                <Link class="nav-link" to="/covid">
+                  Covid
                 </Link>
               </li>
             </ul>
