@@ -1,8 +1,8 @@
 import React from "react";
 
-function Home() {
+function News() {
   return (
-    <div className="home">
+    <div className="news">
       <div class="container">
         <div class="row align-items-center my-5">
           <div class="col-lg-7">
@@ -13,12 +13,9 @@ function Home() {
             />
           </div>
           <div class="col-lg-5">
-            <h1 class="font-weight-light">Landing Page</h1>
+            <h1 class="font-weight-light">Top News for Today</h1>
             <p>
-              Hello welcome to your personal dashboard!
-            </p>
-            <p>
-              This is your space! This is supposed to make your browser experience simpler!
+              This is the top news from today!
             </p>
           </div>
         </div>
@@ -27,4 +24,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default News;

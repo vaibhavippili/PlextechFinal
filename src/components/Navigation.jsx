@@ -77,6 +77,15 @@ function Navigation(props) {
                   Stocks
                 </Link>
               </li>
+              <li
+                class={`nav-item  ${
+                  props.location.pathname === "/news" ? "active" : ""
+                }`}
+              >
+                <Link class="nav-link" to="/news">
+                  News
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
