@@ -1,39 +1,49 @@
 import React from "react";
 
-function About() {
-  return (
-    <div className="about">
-      <p>  </p>
-      <h1 class="font-weight-light" align = "center" >All About Us!</h1>
-      <div class="container">
-        <div class="row align-items-center my-5
-        ">
-          <div class="col-sm-4">
-            <h1 class="font-weight-light">Vaibhav</h1>
-            <p>
-              Hi! My name is Vaibhav and I go to UC Berkeley!
-            </p>
-          </div>
-          <div class="col-sm-4">
-            <h1 class="font-weight-light">Anoushka</h1>
-            <p>
-              Hi! My name is Anoushka and I go to UC Berkeley!
-            </p>
-          </div>
-          <div class="col-sm-4">
-            <h1 class="font-weight-light">Joshua</h1>
-            <p>
-              Hi! My name is Joshua and I go to UC Berkeley!
-            </p>
-          </div>
+function Names(props){
+  return(
+    <div class="col">
+          <h1 class="font-weight-light">{props.names}</h1>
+          <p>
+            {props.description}
+          </p>
         </div>
-      </div>
-    </div>
-  );
+  )
 }
 
-export default About;
+class Aboutclass extends React.Component{
+  constructor(props) {
+      super(props)
+      this.state ={
+          arrayofnames: []
+      }
+  
+  }
+  componentDidMount() {
+      fetch('http://localhost:3001/about',{headers:{'Content-Type':'application/json', 'Accept': 'application/json'}})
+           .then(res => res.json())
+           .then(data => this.setState({arrayofnames: data}));
+  }
+
+  render(){
+    let mappedNames = this.state.arrayofnames.map(item => 
+    <Names names={item.names} description = {item.description} />)
+    console.log(mappedNames)
+    return(
+    <div className="about">
+    <p>  </p>
+    <h1 class="font-weight-light" align = "center" >All About Us!</h1>
+    <div class="container">
+      <div class="row align-items-center my-5">
+        {mappedNames}
+      </div>
+    </div>
+  </div>
+  )
+  }
+}
+
+export default Aboutclass;
 
 
-// WE can use a backend api and make our thing a json list of our names and descriptions 
-// and out put it like ethat which would count as 3 endpointsinstead of hard coding it. 
+
