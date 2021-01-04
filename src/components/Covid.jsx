@@ -1,5 +1,16 @@
 import React from "react";
 
+function Covid(props) {
+  return(
+    <div class="col">
+          <h1 class="font-weight-light">{props.headlines}</h1>
+          <p>
+            {props.report}
+          </p>
+        </div>
+  )
+}
+
 class Covidclass extends React.Component{
 
   constructor(props) {
@@ -10,23 +21,21 @@ class Covidclass extends React.Component{
   }
 
   componentDidMount() {
-    fetch('http://localhost:3001/covid',{headers:{'Content-Type':'application/json', 'Accept': 'application/json'}})
+    fetch('http://localhost:4007/covid',{headers:{'Content-Type':'application/json', 'Accept': 'application/json'}})
          .then(res => res.json())
          .then(data => this.setState({arrayofstats: data}));
   }
 
   render(){
-    console.log(this.state.arrayofstats)
+    let mappedCovid = this.state.arrayofstats.map(item => 
+    <Covid headlines={item.headlines} report = {item.report} />)
     return(
     <div className="covid">
-    <br></br>
-    <h1 class="font-weight-light" align = "center" >Today's Covid Report</h1>
+    <p>  </p>
+    <h1 class="font-weight-light" align = "center" ><b>Today's Covid Report</b></h1>
     <div class="container">
       <div class="row align-items-center my-5">
-        <h1 style={{ color: 'black' }} class="font-weight-light">{this.state.arrayofstats.headlines}</h1>
-          <p>
-            {this.state.arrayofstats.report}
-          </p>
+        {mappedCovid}
       </div>
     </div>
   </div>

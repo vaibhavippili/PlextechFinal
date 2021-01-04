@@ -19,7 +19,7 @@ class Newsclass extends React.Component{
   
   }
   componentDidMount() {
-      fetch('http://localhost:3001/news',{headers:{'Content-Type':'application/json', 'Accept': 'application/json'}})
+      fetch('http://localhost:4007/news',{headers:{'Content-Type':'application/json', 'Accept': 'application/json'}})
            .then(res => res.json())
            .then(data => this.setState({arrayofnews: data.articles}));
   }
