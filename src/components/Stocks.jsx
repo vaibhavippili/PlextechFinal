@@ -1,27 +1,69 @@
-import React from "react";
+import React, { Component } from 'react'
+import axios from 'axios';
 
-function Stocks() {
-  return (
-    <div className="stocks">
-      <div class="container">
-        <div class="row align-items-center my-5">
-          <div class="col-lg-7">
-            <img
-              class="img-fluid rounded mb-4 mb-lg-0"
-              src="http://placehold.it/900x400"
-              alt=""
-            />
-          </div>
-          <div class="col-lg-5">
-            <h1 class="font-weight-light">Top Stock Performers</h1>
-            <p>
-              These are the top stock performers!
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+export class Todo extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+             todos : [],
+             item : ""
+        }
+    }
+
+    changeHandler = (event) => {
+        this.setState({item: event.target.value})
+    }
+
+    clickHandler = (event) => {
+        event.preventDefault()
+        console.log(this.state.item)
+        axios({
+            method: 'post',
+            url: 'http://localhost:3001/',
+            data: {
+              todo: this.state.item,
+            }
+          });
+        this.setState({item:''})
+    }
+
+    componentDidMount() {
+        axios.get('http://localhost:3001/').then((response) => {
+            console.log(response.data.data)
+            let data = [];
+            console.log(response.data.data.length)
+            for(var i =0; i < response.data.data.length; i++){
+                data.push(response.data.data[i].todo)
+            }
+            this.setState({todos: data})
+        });
+    }
+    componentDidUpdate() {
+        axios.get('http://localhost:3001/').then((response) => {
+            console.log(response.data.data)
+            let data = [];
+            console.log(response.data.data.length)
+            for(var i =0; i < response.data.data.length; i++){
+                data.push(response.data.data[i].todo)
+            }
+            this.setState({todos: data})
+        });
+    }
+  
+    render() {
+        
+        return (
+            <div>
+                <input type="text" onChange={this.changeHandler}/>
+                <button type="submit" onClick={this.clickHandler}>add</button>
+                <div>
+                    <title> Write down what you have to do!</title>
+                    <ul>{this.state.todos.map((todo, index) => <li key={index}>{todo}</li>)}</ul>
+                </div>
+            </div>
+        )
+    }
 }
 
-export default Stocks;
+export default Todo
