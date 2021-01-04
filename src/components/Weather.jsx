@@ -1,27 +1,34 @@
 import React from "react";
 
-function Weather() {
-  return (
+class Weatherclass extends React.Component{
+  constructor(props) {
+      super(props)
+      this.state ={
+          arrayoftemps: []
+      }
+  
+  }
+  componentDidMount() {
+      fetch('http://localhost:3001/weather')
+           .then(res => res.json())
+           .then(data => this.setState({arrayoftemps: data.current}));
+  }
+
+  render(){
+    console.log(this.state.arrayoftemps)
+    let props = this.state.arrayoftemps
+    return(
     <div className="weather">
-      <div class="container">
-        <div class="row align-items-center my-5">
-          <div class="col-lg-7">
-            <img
-              class="img-fluid rounded mb-4 mb-lg-0"
-              src="http://placehold.it/900x400"
-              alt=""
-            />
-          </div>
-          <div class="col-lg-5">
-            <h1 class="font-weight-light">Daily Weather Updates</h1>
-            <p>
-              This will output weather stats.
-            </p>
-          </div>
-        </div>
+    <br></br>
+    <h1 class="font-weight-light" align = "center" >Current Weather Readings. Most up to date.</h1>
+    <div class="container">
+      <div class="row align-items-center my-5">
+        <p> Although it feels like {props.feels_like} degrees fahrenheit it is actually {props.temp} degrees fahrenheit.</p>
       </div>
     </div>
-  );
+  </div>
+  )
+  }
 }
 
-export default Weather;
+export default Weatherclass;
