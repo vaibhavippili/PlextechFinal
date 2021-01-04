@@ -1,7 +1,7 @@
 
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Navigation, Home, About, Contact, Covid, Weather, Stocks, News } from "./components";
+import { Navigation, Home, About, Contact, Covid, Weather, Todo, News } from "./components";
 function App() {
   return (
     <div className="App">
@@ -13,7 +13,7 @@ function App() {
           <Route path="/contact" exact component={() => <Contact />} />
           <Route path="/covid" exact component={() => <Covid />} />
           <Route path="/weather" exact component={() => <Weather />} />
-          <Route path="/stocks" exact component={() => <Stocks />} />
+          <Route path="/todo" exact component={() => <Todo />} />
           <Route path="/news" exact component={() => <News />} />
         </Switch>
       </Router>
