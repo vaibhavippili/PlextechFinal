@@ -14,7 +14,7 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [setCredentials] = useContext(CredentialsContext);
+  const [, setCredentials] = useContext(CredentialsContext);
 
   const login = (e) => {
     e.preventDefault();
@@ -34,7 +34,7 @@ export default function Login() {
           username,
           password,
         });
-        history.push("/");
+        history.push("/todos");
       })
       .catch((error) => {
         setError(error.message);
@@ -52,13 +52,13 @@ export default function Login() {
           onChange={(e) => setUsername(e.target.value)}
           placeholder="username"
         />
-        <br></br>
+        <br />
         <input
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           placeholder="password"
         />
-        <br></br>
+        <br />
         <button type="submit">Login</button>
       </form>
     </div>

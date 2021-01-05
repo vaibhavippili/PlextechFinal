@@ -15,7 +15,7 @@ export default function Welcome() {
       {credentials && <button onClick={logout}>Logout</button>}
       <h1>Welcome {credentials && credentials.username}</h1>
       {!credentials && <Link to="/register">Register</Link>}
-      <br></br>
+      <br />
       {!credentials && <Link to="/login">Login</Link>}
       {credentials && <Todos />}
     </div>

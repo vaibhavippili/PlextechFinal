@@ -5,7 +5,7 @@ import { Navigation, Home, About, Contact, Covid, Weather, Comment, News, } from
 import {Welcome, Login, Register} from "./pages";
 
 export const CredentialsContext = React.createContext(null)
-
+//test to make sure that this is shown in git. most updated.
 function App() {
   const credentialsState = useState(null);
   return (

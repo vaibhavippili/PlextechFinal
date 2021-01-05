@@ -7,7 +7,7 @@ export default function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [setCredentials] = useContext(CredentialsContext);
+  const [, setCredentials] = useContext(CredentialsContext);
 
   const register = (e) => {
     e.preventDefault();
@@ -27,7 +27,7 @@ export default function Register() {
           username,
           password,
         });
-        history.push("/");
+        history.push("/todos");
       })
       .catch((error) => {
         setError(error.message);
