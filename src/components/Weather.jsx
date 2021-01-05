@@ -20,13 +20,26 @@ class Weatherclass extends React.Component{
     return(
     <div className="weather">
     <br></br>
-    <h1 class="font-weight-light" align = "center" >Current Weather Readings. Most up to date.</h1>
+    <h1  align = "center" >Current Temperature Reading</h1>
     <div class="container">
-      <div class="row align-items-center my-5">
-        <p> Although it feels like {props.feels_like} degrees fahrenheit it is actually {props.temp} degrees fahrenheit.</p>
-      </div>
+      <p></p>
+      <p></p>
+    {/* <div class="row align-items-center my-5"> */}
+    <div>
+    <h2 class="font-weight-light" align = "center"> Although it feels like <b>{props.feels_like}</b> °F, it is actually <b>{props.temp}</b> °F.</h2>
     </div>
+    </div>
+    <br></br>
+    <img
+              class="img-fluid rounded mb-4 mb-lg-0"
+              src="https://i.pinimg.com/originals/0e/f3/bb/0ef3bb66d9216fffcea9022628f7bb26.gif"
+              alt=""
+              width="600"
+              height="600"
+            />
   </div>
+
+  
   )
   }
 }
