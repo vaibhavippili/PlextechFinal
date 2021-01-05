@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Navigation, Home, About, Contact, Covid, Weather, Comment, News} from "./components";
+import { Navigation, Home, About, Contact, Covid, Weather, Comment, News, } from "./components";
 import {Welcome, Login, Register} from "./pages";
 
 export const CredentialsContext = React.createContext(null)
