@@ -19,7 +19,7 @@ class Covidclass extends React.Component{
   }
 
   componentDidMount() {
-    fetch('http://localhost:4011/covid',{headers:{'Content-Type':'application/json', 'Accept': 'application/json'}})
+    fetch('http://localhost:4015/covid',{headers:{'Content-Type':'application/json', 'Accept': 'application/json'}})
          .then(res => res.json())
          .then(data => this.setState({arrayofstats: data}));
   }
@@ -37,8 +37,10 @@ class Covidclass extends React.Component{
 <div class="centerImage" >
     <img
               class="center"
-              src="https://www.nhpr.org/sites/nhpr/files/styles/medium/public/202011/CoronavirusBall_red_CDChighrez.png"
+              src="https://media3.giphy.com/media/dVuyBgq2z5gVBkFtDc/source.gif"
               alt=""
+              height = "500"
+              width = "800"
             />
             
             </div>

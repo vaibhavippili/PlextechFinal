@@ -9,7 +9,7 @@ class Weatherclass extends React.Component{
   
   }
   componentDidMount() {
-      fetch('http://localhost:4014/weather')
+      fetch('http://localhost:4015/weather')
            .then(res => res.json())
            .then(data => this.setState({arrayoftemps: data.current}));
   }
