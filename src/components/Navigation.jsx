@@ -70,11 +70,11 @@ function Navigation(props) {
               </li>
               <li
                 class={`nav-item  ${
-                  props.location.pathname === "/todo" ? "active" : ""
+                  props.location.pathname === "/comment" ? "active" : ""
                 }`}
               >
-                <Link class="nav-link" to="/todo">
-                  To-Do-List
+                <Link class="nav-link" to="/comment">
+                  Comment Board
                 </Link>
               </li>
               <li
@@ -85,7 +85,16 @@ function Navigation(props) {
                 <Link class="nav-link" to="/news">
                   News
                 </Link>
-              </li>
+              </li>  
+              <li
+                class={`nav-item  ${
+                  props.location.pathname === "/todos" || props.location.pathname ==="/register" || props.location.pathname ==="/login"? "active" : ""
+                }`}
+              >
+                <Link class="nav-link" to="/todos">
+                  To-Do List
+                </Link>
+              </li>  
             </ul>
           </div>
         </div>

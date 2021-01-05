@@ -55,11 +55,12 @@ export class Todo extends Component {
         
         return (
             <div>
-                <input type="text" onChange={this.changeHandler}/>
-                <button type="submit" onClick={this.clickHandler}>add</button>
                 <div>
-                    <title> Write down what you have to do!</title>
-                    <ul>{this.state.todos.map((todo, index) => <li key={index}>{todo}</li>)}</ul>
+                    <br></br>
+                <h1 class="font-weight-light" align = "center" >What's Next?</h1>
+                <input align = "center" type="text" onChange={this.changeHandler}/>
+                <button align = "center" type="submit" onClick={this.clickHandler}>add</button>
+                <ul>{this.state.todos.map((todo, index) => <li key={index}>{todo}</li>)}</ul>
                 </div>
             </div>
         )
