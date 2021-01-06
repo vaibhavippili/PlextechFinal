@@ -18,7 +18,7 @@ class Contactclass extends React.Component{
       }
   }
   componentDidMount() {
-      fetch('http://localhost:4013/contact',{headers:{'Content-Type':'application/json', 'Accept': 'application/json'}})
+      fetch('http://localhost:4016/contact',{headers:{'Content-Type':'application/json', 'Accept': 'application/json'}})
            .then(res => res.json())
            .then(data => this.setState({arrayofcontacts: data}));
   }
@@ -35,7 +35,7 @@ class Contactclass extends React.Component{
                 <l1>{mappedContacts[0]}</l1>
             </div>
 <a href="http://www.instagram.com/vaiibhav_i" target="_"><input 
-type="button" background-color="powderblue" value="Vaibhav's Insta"/></a>
+type="button" value="Vaibhav's Insta"/></a>
 
 <l1>{mappedContacts[1]}</l1> 
 

@@ -18,7 +18,7 @@ class Aboutclass extends React.Component{
   
   }
   componentDidMount() {
-      fetch('http://localhost:4015/about',{headers:{'Content-Type':'application/json', 'Accept': 'application/json'}})
+      fetch('http://localhost:4016/about',{headers:{'Content-Type':'application/json', 'Accept': 'application/json'}})
            .then(res => res.json())
            .then(data => this.setState({arrayofnames: data}));
   }
